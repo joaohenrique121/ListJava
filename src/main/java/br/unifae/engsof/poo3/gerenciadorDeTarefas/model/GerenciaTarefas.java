@@ -15,4 +15,8 @@ import java.util.ArrayList;
  */
 public class GerenciaTarefas {
     private List<Tarefa> Tarefa = new ArrayList<Tarefa>;
+    
+    public Tarefa addTask(){
+        
+    } 
 }
