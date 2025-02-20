@@ -1,1 +1,12 @@
-com\mycompany\mavenproject1\Mavenproject1.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\model\Prioritizavel.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\model\TarefaSimples.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\LIst$2.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\LIst$1.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\model\Tarefa.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\Cadastro$2.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\Cadastro.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\model\GerenciaTarefas.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\Controller\Controller.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\LIst.class
+br\unifae\engsof\poo3\gerenciadorDeTarefas\view\Cadastro$1.class
+TarefaComPrazo.class

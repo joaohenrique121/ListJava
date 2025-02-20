@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.unifae.engsof.poo3.gerenciadorDeTarefas.model;
 
+
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.Tarefa;
 import java.time.LocalDate;
 
 /**
@@ -31,11 +32,7 @@ public class TarefaComPrazo extends Tarefa{
             return false;
         };
         
-   
-        
-    }
-
-    @Override
+      @Override
     public String toString() {
         return super.toString() + "prazo=" + this.prazo + '}';
     }
@@ -49,7 +46,12 @@ public class TarefaComPrazo extends Tarefa{
     public void setPrazo(LocalDate prazo) {
         this.prazo = prazo;
     }
+
+    
+    }
+
+
     
     
     
-}
+
