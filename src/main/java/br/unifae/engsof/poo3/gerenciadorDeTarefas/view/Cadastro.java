@@ -99,7 +99,7 @@ public class Cadastro extends javax.swing.JFrame {
         int prioridade = Integer.parseInt(prior.getText());
         String data = dat.getText();
         
-        System.out.println(descricao+prioridade+data);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

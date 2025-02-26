@@ -15,9 +15,15 @@ import java.util.ArrayList;
  * @author android
  */
 public class GerenciaTarefas {
-    private List<Tarefa> t = new ArrayList<Tarefa>();
+    private static List<Tarefa> t = null;
 
-    public boolean addTask(Tarefa tarefa){
+    public GerenciaTarefas() {
+        if(t != null){
+            t = new ArrayList<Tarefa>();
+        }
+    }
+
+    public static boolean addTask(Tarefa tarefa){
         if(!t.contains(tarefa)) return false;
         
         return t.add(tarefa);
