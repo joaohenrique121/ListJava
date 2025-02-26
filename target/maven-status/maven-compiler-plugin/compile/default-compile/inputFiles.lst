@@ -1,8 +1,8 @@
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\model\GerenciaTarefas.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\view\LIst.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\model\Prioritizavel.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\Controller\Controller.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\model\Tarefa.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\model\TarefaComPrazo.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\view\Cadastro.java
-C:\Users\android\Desktop\ListJava\src\main\java\br\unifae\engsof\poo3\gerenciadorDeTarefas\model\TarefaSimples.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/Controller/Controller.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/model/GerenciaTarefas.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/model/Prioritizavel.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/model/Tarefa.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/model/TarefaComPrazo.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/model/TarefaSimples.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/view/Cadastro.java
+/home/joao/NetBeansProjects/ListJava/src/main/java/br/unifae/engsof/poo3/gerenciadorDeTarefas/view/LIst.java
