@@ -14,7 +14,9 @@ import java.time.LocalDate;
  */
 public class Controller {
     public boolean saveTarefa(String descricao, int prioridade, LocalDate data){
-        
-         GerenciaTarefas.addTask(new TarefaSimples(descricao,  prioridade, data));
+        GerenciaTarefas.addTask(new TarefaSimples(descricao,  prioridade, data));
+        return true;
     }
+    
+     
 }

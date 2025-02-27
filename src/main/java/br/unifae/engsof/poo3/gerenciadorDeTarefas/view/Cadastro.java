@@ -4,6 +4,12 @@
  */
 package br.unifae.engsof.poo3.gerenciadorDeTarefas.view;
 
+
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.Controller.Controller;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author android
@@ -32,8 +38,8 @@ public class Cadastro extends javax.swing.JFrame {
         Descr = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        prioridade = new javax.swing.JList<>();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        prior = new javax.swing.JList<>();
+        dat = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
 
@@ -52,19 +58,24 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
 
-        prioridade.setModel(new javax.swing.AbstractListModel<String>() {
+        prior.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1", "2", "3", "4", "5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(prioridade);
+        jScrollPane1.setViewportView(prior);
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/###")));
+            dat.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.setToolTipText("");
+        dat.setToolTipText("");
+        dat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Concluida");
 
@@ -97,7 +108,7 @@ public class Cadastro extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,7 +129,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap(96, Short.MAX_VALUE))
@@ -129,8 +140,14 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String descricao = Descr.getText();
-        int prioridade = Integer.parseInt(prior.getText());
-        String data = dat.getText();
+        int prioridade = Integer.parseInt(prior.getSelectedValue());
+        String textoData = dat.getText();
+        DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(textoData, formatoEntrada);
+        Controller c = new Controller();
+        boolean tarefa = c.saveTarefa(descricao, prioridade, data);
+        String mensagem = tarefa ? "Tarefa cadastrada com sucesso" : "Erro ao cadastrar tarefa";
+        JOptionPane.showMessageDialog(rootPane, mensagem);
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -138,6 +155,10 @@ public class Cadastro extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void datActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,14 +197,14 @@ public class Cadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Descr;
+    private javax.swing.JFormattedTextField dat;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> prioridade;
+    private javax.swing.JList<String> prior;
     // End of variables declaration//GEN-END:variables
 }
