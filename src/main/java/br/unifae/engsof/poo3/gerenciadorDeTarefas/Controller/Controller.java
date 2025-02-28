@@ -4,6 +4,7 @@
  */
 package br.unifae.engsof.poo3.gerenciadorDeTarefas.Controller;
 
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaComPrazo;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.GerenciaTarefas;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaSimples;
 import java.time.LocalDate;
@@ -13,9 +14,14 @@ import java.time.LocalDate;
  * @author android
  */
 public class Controller {
-    public boolean saveTarefa(String descricao, int prioridade, LocalDate data){
-        GerenciaTarefas.addTask(new TarefaSimples(descricao,  prioridade, data));
-        return true;
+    public boolean saveTarefa(String descricao, int prioridade, LocalDate data, LocalDate prazo){
+        if(prazo == null){
+            GerenciaTarefas.addTask(new TarefaSimples(descricao,  prioridade, data));
+            return true;
+        }else{
+            GerenciaTarefas.addTask(new TarefaComPrazo(prazo, descricao,  prioridade, data));
+            return true;
+        }
     }
     
      

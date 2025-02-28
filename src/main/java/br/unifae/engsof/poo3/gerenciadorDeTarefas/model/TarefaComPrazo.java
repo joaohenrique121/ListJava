@@ -1,3 +1,5 @@
+package br.unifae.engsof.poo3.gerenciadorDeTarefas.model;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -14,13 +16,13 @@ import java.time.LocalDate;
 public class TarefaComPrazo extends Tarefa{
     private LocalDate prazo;
 
-    public TarefaComPrazo() {
-        
-    }
-
     public TarefaComPrazo(LocalDate prazo, String descricao, int prioridade, LocalDate dataCriacao) {
         super(descricao, prioridade, dataCriacao);
         this.prazo = prazo;
+    }
+    
+    public TarefaComPrazo() {
+        
     }
 
     @Override
