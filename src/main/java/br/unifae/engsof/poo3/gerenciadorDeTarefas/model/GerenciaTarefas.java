@@ -18,14 +18,16 @@ public class GerenciaTarefas {
     private static List<Tarefa> t = null;
 
     public GerenciaTarefas() {
-        if(t != null){
+        if(t == null){
             t = new ArrayList<Tarefa>();
         }
     }
 
     public static boolean addTask(Tarefa tarefa){
-        if(!t.contains(tarefa)) return false;
-        
+        if (t == null) {
+            t = new ArrayList<Tarefa>();
+        }
+        if (t.contains(tarefa)) return false; 
         return t.add(tarefa);
     } 
     
