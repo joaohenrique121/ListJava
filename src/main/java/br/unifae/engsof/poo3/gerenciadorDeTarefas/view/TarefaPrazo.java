@@ -177,7 +177,6 @@ public class TarefaPrazo extends javax.swing.JFrame {
         boolean tarefa = c.saveTarefa(descricao, prioridade, data, prazo);
         String mensagem = tarefa ? "Tarefa cadastrada com sucesso" : "Erro ao cadastrar tarefa";
         JOptionPane.showMessageDialog(rootPane, mensagem);
-        c.showList();
         List l = new List();
         l.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
