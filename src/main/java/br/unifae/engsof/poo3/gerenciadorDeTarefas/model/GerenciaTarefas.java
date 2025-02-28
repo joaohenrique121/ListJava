@@ -37,8 +37,8 @@ public class GerenciaTarefas {
         return t.remove(tarefa);
     }
     
-    public List<Tarefa> show(){
-        if(!t.isEmpty())return this.t;
+    public static List<Tarefa> show(){
+        if(!t.isEmpty())return GerenciaTarefas.t;
         
         return (List<Tarefa>) t.get(0);
 

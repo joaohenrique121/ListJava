@@ -8,6 +8,7 @@ package br.unifae.engsof.poo3.gerenciadorDeTarefas.model;
 
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.Tarefa;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -27,12 +28,27 @@ public class TarefaComPrazo extends Tarefa{
 
     @Override
     public boolean equals(Object obj) {
-        if(super.equals(obj)){
-            if(this.prazo.equals(((TarefaComPrazo)obj).prazo))
-                return true;
-            }
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
-        };
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TarefaComPrazo other = (TarefaComPrazo) obj;
+        return Objects.equals(this.prazo, other.prazo);
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 17 * hash + Objects.hashCode(this.prazo);
+        return hash;
+    }
         
       @Override
     public String toString() {

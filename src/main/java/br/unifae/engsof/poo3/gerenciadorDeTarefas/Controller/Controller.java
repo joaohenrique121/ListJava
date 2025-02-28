@@ -8,6 +8,7 @@ import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaComPrazo;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.GerenciaTarefas;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaSimples;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -22,6 +23,11 @@ public class Controller {
             GerenciaTarefas.addTask(new TarefaComPrazo(prazo, descricao,  prioridade, data));
             return true;
         }
+    }
+    
+    public void showList(){
+        List Tarefas = GerenciaTarefas.show();
+        System.out.println(Tarefas.toString());
     }
     
      
