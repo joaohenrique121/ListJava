@@ -5,8 +5,10 @@ br/unifae/engsof/poo3/gerenciadorDeTarefas/model/TarefaComPrazo.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$7.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List$5.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$6.class
+br/unifae/engsof/poo3/gerenciadorDeTarefas/view/ViewTarefas.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/Cadastro$3.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$1.class
+br/unifae/engsof/poo3/gerenciadorDeTarefas/view/ViewTarefas$1.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$4.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$3.class
@@ -14,6 +16,8 @@ br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List$2.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/Cadastro$6.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List$4.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/Cadastro$4.class
+br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List$6.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo.class
+br/unifae/engsof/poo3/gerenciadorDeTarefas/view/ViewTarefas$2.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/TarefaPrazo$5.class
 br/unifae/engsof/poo3/gerenciadorDeTarefas/view/List$3.class

@@ -38,9 +38,10 @@ public class GerenciaTarefas {
     }
     
     public static List<Tarefa> show(){
-        if(!t.isEmpty())return GerenciaTarefas.t;
-        
-        return (List<Tarefa>) t.get(0);
+        if (!t.isEmpty()) {
+            return t; 
+        }
+        return new ArrayList<>();
 
     }
 }

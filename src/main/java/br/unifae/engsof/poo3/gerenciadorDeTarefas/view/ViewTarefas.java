@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.unifae.engsof.poo3.gerenciadorDeTarefas.view;
-
+import java.util.List;
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.Controller.Controller;
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.Tarefa;
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaComPrazo;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author joao
@@ -15,6 +19,20 @@ public class ViewTarefas extends javax.swing.JFrame {
      */
     public ViewTarefas() {
         initComponents();
+        Controller c = new Controller();
+        DefaultTableModel model = (DefaultTableModel) TaskTable.getModel();
+        model.setRowCount(0);
+        List<Tarefa> tarefas = c.showList(); 
+        for (Tarefa tarefa : tarefas) {
+            Object[] rowData;
+            if(tarefa instanceof TarefaComPrazo){
+                TarefaComPrazo tarefacomprazo = (TarefaComPrazo) tarefa;
+                rowData = new Object[]{tarefacomprazo.getDescricao(), tarefacomprazo.getPrioridade(), tarefacomprazo.getDataCriacao(),tarefacomprazo.getPrazo()};
+            }else{
+                rowData = new Object[]{tarefa.getDescricao(), tarefa.getPrioridade(), tarefa.getDataCriacao(), "Sem Prazo"};
+            }
+            model.addRow(rowData);
+        }
     }
 
     /**
@@ -26,17 +44,54 @@ public class ViewTarefas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TaskTable = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        TaskTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Descrição", "Prioridade", "DataCriação", "Prazo", "Concluida"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TaskTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -78,5 +133,7 @@ public class ViewTarefas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaskTable;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

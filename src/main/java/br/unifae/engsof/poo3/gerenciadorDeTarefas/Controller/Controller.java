@@ -6,6 +6,7 @@ package br.unifae.engsof.poo3.gerenciadorDeTarefas.Controller;
 
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaComPrazo;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.GerenciaTarefas;
+import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.Tarefa;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.model.TarefaSimples;
 import java.time.LocalDate;
 import java.util.List;
@@ -25,9 +26,9 @@ public class Controller {
         }
     }
     
-    public void showList(){
+    public List<Tarefa> showList(){
         List Tarefas = GerenciaTarefas.show();
-        System.out.println(Tarefas.toString());
+        return Tarefas;
     }
     
      
