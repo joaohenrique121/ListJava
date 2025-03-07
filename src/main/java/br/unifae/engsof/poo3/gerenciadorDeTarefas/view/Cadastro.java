@@ -8,6 +8,7 @@ package br.unifae.engsof.poo3.gerenciadorDeTarefas.view;
 import br.unifae.engsof.poo3.gerenciadorDeTarefas.Controller.Controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 
 /**
@@ -143,15 +144,21 @@ public class Cadastro extends javax.swing.JFrame {
         String txtPrioridade = (String) jComboBox1.getSelectedItem();
         int prioridade = Integer.parseInt(txtPrioridade);
         String textoData = dat.getText();
-        DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate data = LocalDate.parse(textoData, formatoEntrada);
-        LocalDate prazo = null;
-        Controller c = new Controller();
-        boolean tarefa = c.saveTarefa(descricao, prioridade, data, prazo);
-        String mensagem = tarefa ? "Tarefa cadastrada com sucesso" : "Erro ao cadastrar tarefa";
-        JOptionPane.showMessageDialog(rootPane, mensagem);
-        List l = new List();
-        l.setVisible(true);
+        try{
+            DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate data = LocalDate.parse(textoData, formatoEntrada);
+            LocalDate prazo = null;
+            Controller c = new Controller();
+            boolean tarefa = c.saveTarefa(descricao, prioridade, data, prazo);
+            String mensagem = tarefa ? "Tarefa cadastrada com sucesso" : "Erro ao cadastrar tarefa";
+            JOptionPane.showMessageDialog(rootPane, mensagem);
+            List l = new List();
+            l.setVisible(true);
+        }catch(DateTimeParseException e){
+            JOptionPane.showMessageDialog(rootPane, "Data invalida");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Data invalida");
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
